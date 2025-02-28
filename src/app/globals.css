@@ -1,24 +1,345 @@
-@import "tailwindcss";
-
-@theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
+::selection {
+  background-color: #fff;
+  color: var(--clr-main);
+}
+/* Remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --clr-main: #07d076;
+  --clr-green: #26ba79;
+  --clr-green2: #108655;
+  --clr-text: #e4e4e4;
+}
+/* Set body defaults */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: #000;
+  color: var(--clr-text);
+  font-family: var(--font-montserrat), sans-serif;
+
+  font-size: 1.8rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Remove list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove default button styles */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Ensure images and videos are responsive */
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove anchor styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Improve accessibility for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Reset Heading and Paragraph Styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+/* Ensure paragraphs are readable */
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+.nav {
+  justify-content: center;
+  padding: 3rem 5rem;
+  gap: 10rem;
+  border-bottom: 1px solid rgb(52, 47, 47);
+}
+.nav__links {
+  gap: 4rem;
+}
+.nav__links > li a {
+  position: relative;
+}
+.nav__links > li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background: var(--clr-main);
+  transition: 0.3s;
+}
+
+.nav__links > li a:hover::after {
+  width: 100%;
+}
+.light-effect {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  z-index: -1;
+}
+
+.light-effect img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #fff 50%, #999999);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-text {
+  user-select: none;
+}
+.hero-content {
+  text-align: center;
+  max-width: 60%;
+  margin: auto;
+  margin-top: 10rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(3rem, 5vw + 2rem, 7rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+.hero-content p {
+  font-size: clamp(1.8rem, 1vw + 1rem, 2rem);
+  margin-top: 2rem;
+  max-width: 50%;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.btns {
+  gap: 3rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.btns .btn {
+  padding: 1rem 2rem;
+  color: var(--clr-main);
+  font-weight: 500;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+  transition: 0.3s;
+}
+.btns .btn:hover {
+  opacity: 0.7;
+}
+.btns .btn:first-child {
+  background: linear-gradient(to bottom, rgb(55, 100, 55), var(--clr-green));
+}
+
+.btns .btn:last-child {
+  border: 2px solid white;
+}
+
+.stats-container {
+  margin-top: 10rem;
+  justify-content: space-between;
+  padding-inline: 5rem;
+}
+.stats-container .left {
+  flex-basis: 40%;
+}
+.stats-container .left > p {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.9;
+}
+.stats-box {
+  border: 1px solid gray;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.086);
+  border-radius: 1rem;
+  padding: 1.8rem;
+  justify-content: space-between;
+  margin-top: 6rem;
+}
+.stats-box > div h2 {
+  font-size: 5rem;
+  font-weight: 600;
+  color: var(--clr-main);
+}
+
+.stats-box > div p {
+  font-size: 1.4rem;
+}
+
+.about {
+  padding: 5rem;
+  gap: 4rem;
+  width: 100%;
+  align-items: flex-start;
+  position: relative;
+}
+.about .left {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.about .left p {
+  line-height: 1.9;
+}
+
+.about .right {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.about .right > div {
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.086);
+  border: 1px solid gray;
+  border-radius: 1.2rem;
+}
+.about .right p {
+  font-size: 1.6rem;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+.about .right h2 {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.blur-effect {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 400px;
+  background-color: var(--clr-main);
+  filter: blur(100px);
+  opacity: 0.6;
+}
+
+.footer {
+  padding: 5rem 7rem;
+  background-image: linear-gradient(
+    to bottom,
+    var(--clr-green),
+    var(--clr-green2)
+  );
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: flex-start;
+}
+
+.footer .col-1 > img {
+  width: 300px;
+}
+
+.footer > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer > div h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.social-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.social-links img {
+  width: 2rem;
+  display: inline-block;
+}
+
+.col-3 span,
+.social-links a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid white;
+  padding: 1rem;
+}
+
+.col-3 > div {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Track background */
+  border-radius: 5px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #07d076; /* Thumb color */
+  border-radius: 5px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #05b362; /* Darker shade on hover */
 }
