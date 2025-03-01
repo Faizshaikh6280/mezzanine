@@ -1,12 +1,26 @@
+import { SlSocialFacebook } from "react-icons/sl";
+import { SlSocialInstagram } from "react-icons/sl";
+import { SlSocialLinkedin } from "react-icons/sl";
+import { FaXTwitter } from "react-icons/fa6";
+import { SlLocationPin } from "react-icons/sl";
+import { LuPhoneCall } from "react-icons/lu";
+import { GoMail } from "react-icons/go";
+import Image from "next/image";
+
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer  left-0">
       <div className="col-1">
-        <img src="/images/logo-white.svg" alt="Logo" />
+        <Image alt="icon" width={20} height={20} src="/images/logo-white.svg" />
         <div className="social-links">
-          {["face-icon", "insta-icon", "linkedin-icon", "x"].map((icon) => (
-            <a key={icon} href="#">
-              <img src={`/images/${icon}.svg`} alt={icon} />
+          {[
+            SlSocialFacebook,
+            SlSocialInstagram,
+            SlSocialLinkedin,
+            FaXTwitter,
+          ].map((Icon) => (
+            <a key={Icon} href="#" className="shrink-0">
+              <Icon size={22} />
             </a>
           ))}
         </div>
@@ -23,8 +37,8 @@ export default function Footer() {
         <h2>Contact Information</h2>
 
         <div>
-          <span>
-            <img src="./images/location-white-icon.png" />
+          <span className="shrink-0">
+            <SlLocationPin size={22} />
           </span>
           <p>
             C-44, Pushpam Bunglows, Kharawala Compound, Vatva Road, Isanpur,
@@ -32,15 +46,14 @@ export default function Footer() {
           </p>
         </div>
         <div>
-          <span>
-            {" "}
-            <img src="./images/call-icon.svg" />{" "}
+          <span className="shrink-0">
+            <LuPhoneCall size={20} />
           </span>
           <p>+91-886-687-3523</p>
         </div>
         <div>
-          <span>
-            <img src="./images/man-icon.svg" />{" "}
+          <span className="shrink-0">
+            <GoMail size={20} />
           </span>
           <p>mezzanineequity@gmail.com</p>
         </div>

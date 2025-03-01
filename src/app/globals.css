@@ -1,4 +1,5 @@
 /* Box sizing rules */
+@import "tailwindcss";
 *,
 *::before,
 *::after {
@@ -91,7 +92,6 @@ p {
 }
 
 /* Ensure paragraphs are readable */
-
 .flex {
   display: flex;
   align-items: center;
@@ -102,6 +102,7 @@ p {
   gap: 10rem;
   border-bottom: 1px solid rgb(52, 47, 47);
 }
+
 .nav__links {
   gap: 4rem;
 }
@@ -118,8 +119,11 @@ p {
   background: var(--clr-main);
   transition: 0.3s;
 }
-
 .nav__links > li a:hover::after {
+  width: 100%;
+}
+
+.nav__links > li a.active::after {
   width: 100%;
 }
 .light-effect {
@@ -342,4 +346,66 @@ p {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #05b362; /* Darker shade on hover */
+}
+.modal {
+  color: #000;
+}
+
+.modal .left,
+.modal .right {
+  background-color: var(--clr-main);
+  padding-block: 2rem;
+}
+.modal .right {
+  background-color: white;
+  padding: 4rem;
+}
+.modal .right h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.modal .right p {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+.font-bold {
+  font-weight: 600;
+}
+.modal .left > div {
+  position: relative;
+  padding: 1.5rem 2rem;
+}
+.modal .left > div::after {
+  position: absolute;
+  content: "";
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #000;
+}
+.modal .left ul {
+  margin-top: 2rem;
+}
+
+.modal .left ul > li {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  padding: 2rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.modal .left ul > li:hover {
+  background-color: var(--clr-green2);
+  color: white;
+  text-decoration: underline;
+}
+
+img {
+  min-width: max-content;
+  min-height: max-content;
 }
