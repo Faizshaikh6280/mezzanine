@@ -2,8 +2,11 @@
 import Link from "next/link";
 import ServiceModal from "./ServiceModal";
 import { GoArrowRight } from "react-icons/go";
-import React, { useEffect, useState } from "react";
-import { serviceslinks } from "@/data";
+import { RiMenu3Line } from "react-icons/ri";
+
+import React, { useEffect, useRef, useState } from "react";
+import { navlinks, serviceslinks } from "@/data";
+import gsap from "gsap";
 
 const serviceData = [
   {
@@ -44,6 +47,13 @@ export default function Header() {
   const [selectedPage, setSelectedPage] = useState("");
   const [isMobile, setIsMobile] = useState(false);
   const [selectedService, setSelectedService] = useState(0);
+  const boxRef = useRef(null); // Create a reference for the element
+
+  useEffect(() => {
+    gsap.from(boxRef.current, {
+      right: "-1rem",
+    });
+  }, []); // Runs only once after the component mounts
 
   const service = serviceData[selectedService];
 
@@ -70,19 +80,39 @@ export default function Header() {
         </Link>
 
         <ul className="flex nav__links">
-          {["Home", "Services", "Portfolio", "Our Team", "Contact Us"].map(
-            (item) => (
-              <li key={item} onClick={() => setSelectedPage(item)}>
-                <Link
-                  href="#"
-                  className={selectedPage === item ? "active" : ""}
-                >
-                  {item}
-                </Link>
-              </li>
-            )
-          )}
+          {navlinks.map((item, indx) => (
+            <li key={indx} onClick={() => setSelectedPage(item.title)}>
+              <Link
+                href={item.link}
+                className={selectedPage === item.title ? "active" : ""}
+              >
+                {item.title}
+              </Link>
+            </li>
+          ))}
         </ul>
+        {/* if screen is mobile (less than 793px show this navbar) */}
+        {isMobile && (
+          <div className="menu" ref={boxRef}>
+            <div className="hamburger__icon cursor-pointer">
+              <RiMenu3Line size={30} />
+            </div>
+            <div className="mobile__menu">
+              <ul className="flex nav__links">
+                {navlinks.map((item, indx) => (
+                  <li key={indx} onClick={() => setSelectedPage(item.title)}>
+                    <Link
+                      href={item.link}
+                      className={selectedPage === item.title ? "active" : ""}
+                    >
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
       </nav>
 
       <ServiceModal
@@ -100,7 +130,7 @@ export default function Header() {
               {serviceslinks.map((service, index) => (
                 <li
                   onClick={() => setSelectedPage("")}
-                  key={service.heading}
+                  key={index}
                   onMouseEnter={() => setSelectedService(index)}
                 >
                   <Link href={`/services/${service.id}`}>{service.title}</Link>
@@ -112,8 +142,10 @@ export default function Header() {
           {!isMobile && (
             <div className="right h-full basis-2/3  items-start">
               <h1 className="font-bold text-2xl">{service.heading}</h1>
-              {service.description.map((para) => (
-                <p className="mt-4">{para}</p>
+              {service.description.map((para, indx) => (
+                <p className="mt-4" key={indx}>
+                  {para}
+                </p>
               ))}
             </div>
           )}
