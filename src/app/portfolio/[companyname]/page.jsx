@@ -44,18 +44,20 @@ function PortfolioPage({ params }) {
   return (
     <div className="portfolio-page">
       <div className="flex justify-center">
-        <img
-          className="logo"
-          src={portfolio.logoblack ? portfolio.logoblack : portfolio.logo}
-          alt={portfolio.title}
-        />
+        {(portfolio.logoblack || portfolio.logo) && (
+          <img
+            className="logo"
+            src={portfolio.logoblack ? portfolio.logoblack : portfolio.logo}
+            alt={portfolio.title}
+          />
+        )}
       </div>
 
       <motion.h1
         initial={{ y: 80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className=" text-8xl font-bold text-center"
+        className=" text-8xl font-bold text-center company-name"
       >
         {portfolio.title}
       </motion.h1>
@@ -65,7 +67,7 @@ function PortfolioPage({ params }) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="font-bold">Sector:</span> {portfolio.sector}
+          <span className="font-bold sector">Sector:</span> {portfolio.sector}
         </motion.h3>
       </div>
 

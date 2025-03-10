@@ -21,14 +21,14 @@ function Portfolio() {
         <div className="blur-effect"></div>
         <h2>All Investments</h2>
         {portfolioLinkks.map((portfolio, indx) => (
-          <div className="investment-card" key={indx}>
+          <Link href={portfolio.link} className="investment-card" key={indx}>
             <Link className="gradient-text" href={portfolio.link}>
               {portfolio.title}
             </Link>
             {portfolio.slug !== "not-disclosed" && (
               <img src={portfolio.logo} alt={portfolio.title + "logo"} />
             )}
-          </div>
+          </Link>
         ))}
       </div>
     </div>

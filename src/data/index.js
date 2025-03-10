@@ -1,6 +1,20 @@
-import { FaInstagram } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
+import { SlSocialFacebook } from "react-icons/sl";
+import { SlSocialInstagram } from "react-icons/sl";
+import { SlSocialLinkedin } from "react-icons/sl";
+import { FaXTwitter } from "react-icons/fa6";
+
+export const socialIcons = [
+  {
+    icon: SlSocialLinkedin,
+    href: "https://www.linkedin.com/in/kenil-thathagar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  },
+  {
+    icon: FaXTwitter,
+    href: "https://x.com/mezza9_Equity?t=MtW_CYOlQTpNBlqq0D9ZJw&s=09",
+  },
+];
 
 export const serviceslinks = [
   {

@@ -19,25 +19,13 @@ export default function Header() {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768); // Adjust breakpoint as needed
+      setIsMobile(window.innerWidth < 760); // Adjust breakpoint as needed
     };
 
     checkScreenSize(); // Run on mount
     window.addEventListener("resize", checkScreenSize);
 
     return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY >= window.innerHeight) {
-        setMenuOpen(false);
-      }
-    };
-    console.log("scroll");
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll); // Cleanup
   }, []);
 
   const containerVariants = {
@@ -47,6 +35,7 @@ export default function Header() {
       transition: { staggerChildren: 0.3 }, // Staggers each child
     },
   };
+
   const listVariants = {
     hidden: { opacity: 0, x: 50 },
     visible: {
@@ -58,7 +47,7 @@ export default function Header() {
 
   return (
     <header>
-      <nav className="flex nav">
+      <nav className="flex nav relative">
         <div className="light-effect">
           <img src="/images/light-bg-2.png" alt="Light effect" />
         </div>
@@ -81,7 +70,7 @@ export default function Header() {
         </ul>
         {/* if screen is mobile (less than 793px show this navbar) */}
         {isMobile && (
-          <div className="menu">
+          <div className="menu ">
             <div
               className="hamburger__icon cursor-pointer"
               onClick={() => setMenuOpen(true)}

@@ -1,14 +1,9 @@
-import { SlSocialFacebook } from "react-icons/sl";
-import { SlSocialInstagram } from "react-icons/sl";
-import { SlSocialLinkedin } from "react-icons/sl";
-import { FaXTwitter } from "react-icons/fa6";
 import { SlLocationPin } from "react-icons/sl";
 import { LuPhoneCall } from "react-icons/lu";
 import { GoMail } from "react-icons/go";
-import Image from "next/image";
 import { LuCopyright } from "react-icons/lu";
-import { FaHeart } from "react-icons/fa";
 import Link from "next/link";
+import { socialIcons } from "@/data";
 
 export default function Footer() {
   return (
@@ -17,14 +12,14 @@ export default function Footer() {
         <div className="col-1">
           <img alt="icon" src="/images/logo-white.svg" className="logo" />
           <div className="social-links">
-            {[
-              SlSocialFacebook,
-              SlSocialInstagram,
-              SlSocialLinkedin,
-              FaXTwitter,
-            ].map((Icon) => (
-              <a key={Icon} href="#" className="shrink-0">
-                <Icon size={22} />
+            {socialIcons.map((social, indxl) => (
+              <a
+                key={indxl}
+                href={social.href}
+                className="shrink-0"
+                target="_blank"
+              >
+                <social.icon size={22} />
               </a>
             ))}
           </div>

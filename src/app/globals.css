@@ -18,6 +18,7 @@
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 :root {
   --clr-main: rgb(7, 208, 118);
@@ -34,6 +35,11 @@ body {
   font-family: var(--font-montserrat), sans-serif;
   overflow-x: hidden;
   font-size: 1.8rem;
+}
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Remove list styles */
@@ -60,6 +66,13 @@ video,
 canvas,
 svg {
   max-width: 100%;
+  display: block;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -130,7 +143,7 @@ p {
   width: 100%;
 }
 
-@media screen and (max-width: 1022px) {
+@media screen and (max-width: 1024px) {
   .nav {
     padding: 3rem 2.5rem;
     gap: 5rem;
@@ -148,8 +161,17 @@ p {
     padding: 3rem 2.5rem;
     gap: 5rem;
   }
+  .nav img {
+    width: 200px;
+  }
+  .nav__links {
+    gap: 2rem;
+  }
+  .nav__links > li a {
+    font-size: 1.2rem;
+  }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 760px) {
   .nav__links {
     display: none;
   }
@@ -160,7 +182,7 @@ p {
 
 /* mobile menu Styles */
 .mobile__menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: -100%;
   width: 80%;
@@ -233,7 +255,7 @@ p {
 }
 
 .hero-content h1 {
-  font-size: clamp(3rem, 5vw + 2rem, 7rem);
+  font-size: clamp(2rem, 5vw + 2rem, 7rem);
   font-weight: 600;
   line-height: 1.2;
 }
@@ -283,6 +305,9 @@ p {
     padding: 0.8rem 1.2rem;
     border-radius: 20px;
     font-size: 1.4rem;
+  }
+  .hero-content {
+    max-width: 80%;
   }
 }
 
@@ -336,6 +361,7 @@ p {
     margin: auto;
     margin-top: 4rem;
   }
+
   .stats-box p {
     text-align: center;
   }
@@ -350,6 +376,9 @@ p {
     justify-content: center;
     gap: 2rem;
     width: 60%;
+  }
+  .stats-box div h2 {
+    font-size: 4rem;
   }
   .stats-box > div h2 {
     text-align: center;
@@ -463,8 +492,9 @@ p {
 }
 .social-links {
   display: flex;
-  gap: 2rem;
   align-items: center;
+  gap: 5rem;
+  margin-top: 1rem;
 }
 
 .social-links img {
@@ -504,6 +534,10 @@ p {
     grid-template-columns: repeat(1, 1fr);
     align-items: flex-start;
     row-gap: 4rem;
+  }
+  .footer .col-1 .logo {
+    width: 250px;
+    min-width: 250px;
   }
 }
 /* For Webkit browsers (Chrome, Safari) */
@@ -691,6 +725,11 @@ img {
 .portfolio {
   padding: 10rem 5rem;
 }
+@media screen and (max-width: 768px) {
+  .portfolio h1 {
+    font-size: 3rem;
+  }
+}
 .portfolio h2 {
   letter-spacing: 1.9;
 }
@@ -721,7 +760,7 @@ img {
   grid-column: 1 / -1;
 }
 
-.investments div {
+.investments .investment-card {
   border: 1px solid gray;
   background-color: rgba(255, 255, 255, 0.086);
   border-radius: 1rem;
@@ -736,22 +775,36 @@ img {
   transition: all 0.3s;
   text-align: center;
 }
+
 .investments div:hover {
   border: 1px solid var(--clr-main);
+}
+
+.investment-card {
+  display: block;
 }
 
 .investment-card img {
   filter: grayscale(100);
   transition: all 0.3s;
+  max-width: 60px;
+  height: 100px;
+}
+
+@media screen and (max-width: 425px) {
+  .investments h2 {
+    text-align: center;
+  }
+
+  .investment-card img {
+    max-width: 50px;
+    height: 50px;
+  }
 }
 .investment-card:hover img {
   filter: grayscale(0);
 }
 
-.investments div img {
-  max-width: 60px;
-  height: 100px;
-}
 .investments div:hover a {
   text-decoration: underline;
   background: var(--clr-main);
@@ -796,22 +849,13 @@ img {
   height: 150px;
   margin-bottom: 1rem;
 }
-
-.domain {
-  background-image: linear-gradient(to right, #fff 80%, #999999);
-  color: black;
-  border-radius: 4rem;
-  padding: 1rem 2rem;
-  display: inline-block;
+.portfolio-page .company-name {
+  font-size: 3rem;
+  font-weight: 600;
 }
+
 .portfolio-content {
   margin-top: 5rem;
-}
-.square {
-  width: 2.5rem;
-  height: 2.5rem;
-  background-color: var(--clr-main);
-  border-radius: 0.4rem;
 }
 
 .portfolio-description {
@@ -872,6 +916,13 @@ img {
   }
   .portfolio-website {
     font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .portfolio-page .logo {
+    max-width: 80px;
+    height: 80px;
   }
 }
 
