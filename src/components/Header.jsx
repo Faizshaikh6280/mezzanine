@@ -3,57 +3,17 @@ import Link from "next/link";
 import ServiceModal from "./ServiceModal";
 import { GoArrowRight } from "react-icons/go";
 import { RiMenu3Line } from "react-icons/ri";
+import { RxCrossCircled } from "react-icons/rx";
 
-import React, { useEffect, useRef, useState } from "react";
-import { navlinks, serviceslinks } from "@/data";
-import gsap from "gsap";
-
-const serviceData = [
-  {
-    heading:
-      "Pre-IPO Advisory: Evaluating Readiness & Crafting a Strategic Path",
-    description: [
-      "For companies considering an IPO, we provide expert insights into feasibility and preparedness, ensuring a seamless transition to public markets.",
-    ],
-  },
-  {
-    heading: "Fundraising Strategy",
-    description: [
-      "•	Private Placement (Pre-IPO Equity Infusion)",
-      "\n •	Anchor Investments for Public Offerings",
-    ],
-  },
-  {
-    heading: "Assistance in compliance and regulatory requirements",
-    description: [
-      "Listing on an exchange involves stringent compliance requirements. With our connections in legal and regulatory frameworks, we offer comprehensive advisory services",
-    ],
-  },
-  {
-    heading: "Underwriting & Pricing Advisory",
-    description: [
-      "Structuring underwriting and pricing to strengthen investor confidence, manage risk, and establish a competitive, market-aligned share price.",
-    ],
-  },
-  {
-    heading: "Guidance in Value unlocking",
-    description: [
-      "Assisting companies in unlocking value by optimizing their financial and operational efficiencies, ultimately enhancing profitability and shareholder returns.",
-    ],
-  },
-];
+import React, { useEffect, useState } from "react";
+import { navlinks, serviceData, serviceslinks } from "@/data";
+import { motion } from "framer-motion";
 
 export default function Header() {
   const [selectedPage, setSelectedPage] = useState("");
   const [isMobile, setIsMobile] = useState(false);
   const [selectedService, setSelectedService] = useState(0);
-  const boxRef = useRef(null); // Create a reference for the element
-
-  useEffect(() => {
-    gsap.from(boxRef.current, {
-      right: "-1rem",
-    });
-  }, []); // Runs only once after the component mounts
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const service = serviceData[selectedService];
 
@@ -68,14 +28,42 @@ export default function Header() {
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= window.innerHeight) {
+        setMenuOpen(false);
+      }
+    };
+    console.log("scroll");
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll); // Cleanup
+  }, []);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.3 }, // Staggers each child
+    },
+  };
+  const listVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.4, ease: "easeOut" },
+    },
+  };
+
   return (
     <header>
       <nav className="flex nav">
         <div className="light-effect">
-          <img src="/images/light-bg.png" alt="Light effect" />
+          <img src="/images/light-bg-2.png" alt="Light effect" />
         </div>
 
-        <Link href={"/"}>
+        <Link href={"/"} onClick={() => setSelectedPage("")}>
           <img src="/images/logo-white.svg" alt="Mezzanine logo" />
         </Link>
 
@@ -93,23 +81,40 @@ export default function Header() {
         </ul>
         {/* if screen is mobile (less than 793px show this navbar) */}
         {isMobile && (
-          <div className="menu" ref={boxRef}>
-            <div className="hamburger__icon cursor-pointer">
+          <div className="menu">
+            <div
+              className="hamburger__icon cursor-pointer"
+              onClick={() => setMenuOpen(true)}
+            >
               <RiMenu3Line size={30} />
             </div>
-            <div className="mobile__menu">
-              <ul className="flex nav__links">
+            <div className={`mobile__menu ${menuOpen ? "active" : ""}`}>
+              <span className="icon" onClick={() => setMenuOpen(false)}>
+                <RxCrossCircled size={40} />
+              </span>
+              <motion.ul
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.2 }}
+                className="mobile__menu__links flex flex-col gap-10 "
+              >
                 {navlinks.map((item, indx) => (
-                  <li key={indx} onClick={() => setSelectedPage(item.title)}>
+                  <motion.li
+                    variants={listVariants}
+                    key={indx}
+                    onClick={() => setSelectedPage(item.title)}
+                  >
                     <Link
+                      onClick={() => setMenuOpen(false)}
                       href={item.link}
                       className={selectedPage === item.title ? "active" : ""}
                     >
                       {item.title}
                     </Link>
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
+              </motion.ul>
             </div>
           </div>
         )}

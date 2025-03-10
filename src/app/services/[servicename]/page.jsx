@@ -1,12 +1,15 @@
+"use client";
+
 import { serviceslinks } from "@/data";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { motion } from "framer-motion";
 
-export function generateStaticParams() {
-  return serviceslinks.map((service) => ({
-    servicename: service.id, // Must match the dynamic route [service]
-  }));
-}
+// export function generateStaticParams() {
+//   return serviceslinks.map((service) => ({
+//     servicename: service.id, // Must match the dynamic route [service]
+//   }));
+// }
 
 export default function ServicePage({ params }) {
   if (!params) return null; // Ensure params exist before using it
@@ -25,7 +28,14 @@ export default function ServicePage({ params }) {
 
   return (
     <div className="service px-[20rem] py-[3rem]">
-      <h1 className="gradient-text">{service.title}</h1>
+      <motion.h1
+        initial={{ y: 80, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="gradient-text"
+      >
+        {service.heading}
+      </motion.h1>
       <p>{service.description}</p>
 
       <div className="image-container ">

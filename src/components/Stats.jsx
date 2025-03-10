@@ -1,27 +1,37 @@
+import { motion } from "framer-motion";
+
 export default function Stats() {
   return (
     <section className="stats-container flex">
-      <div className="left">
+      <motion.div
+        className="left"
+        initial={{ opacity: 0, x: -300 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <p>
-          For 13 years, Mezzanine has backed brilliant entrepreneurs who address
-          the hardest, highest-stakes problems in the world.
+          For over 2 years, Mezzanine Equity has backed brilliant businesses,
+          serving as a trusted partner in transforming ambition into market
+          leadership.
         </p>
         <div className="stats-box flex">
           <div>
-            <h2>13+</h2>
+            <h2>02</h2>
             <p>Years Running</p>
           </div>
+
           <div>
-            <h2>101</h2>
-            <p>Startup Invested In</p>
-          </div>
-          <div>
-            <h2>$4B</h2>
+            <h2>50crs+</h2>
             <p>Investment Raised</p>
           </div>
+          <div>
+            <h2>03</h2>
+            <p>Companies Advised</p>
+          </div>
         </div>
-      </div>
-      <img src="/images/img-1.png" alt="Image" />
+      </motion.div>
+      <motion.img src="/images/img-1.png" alt="Image" />
     </section>
   );
 }
