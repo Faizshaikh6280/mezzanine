@@ -13,7 +13,7 @@ const ServiceModal = ({ isOpen, onClose, children }) => {
         ref={modalRef}
       >
         <button
-          className="absolute top-12 right-10 text-gray-700"
+          className="absolute top-12 right-10 text-gray-700 btn"
           onClick={onClose}
         >
           <RxCross2

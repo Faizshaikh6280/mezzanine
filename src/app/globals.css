@@ -578,13 +578,20 @@ p {
     top: 50%;
     width: 100%;
     position: fixed;
+    z-index: 100;
+  }
+  .service-modal .btn {
+    top: 6rem;
+    right: 4rem;
   }
   .modal .left {
     height: 100vh;
+    padding-top: 5rem;
   }
   .service-modal > div {
     width: 100%;
     height: 100vh;
+    background-color: var(--clr-main);
   }
 
   .modal .left {

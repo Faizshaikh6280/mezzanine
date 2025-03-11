@@ -29,7 +29,7 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    if (menuOpen) {
+    if (menuOpen || selectedPage === "Services") {
       document.body.classList.add("no-scroll");
     } else {
       document.body.classList.remove("no-scroll");
@@ -37,7 +37,7 @@ export default function Header() {
     return () => {
       document.body.classList.remove("no-scroll");
     };
-  }, [menuOpen]);
+  }, [menuOpen, selectedPage]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
