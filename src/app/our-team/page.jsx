@@ -30,12 +30,11 @@ function OurTeam() {
             className="team-card"
             onClick={() => {
               setSelectedMember(member);
-              console.log("clicked");
 
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            <div className="team-image w-[400px] h-[400px] relative overflow-hidden rounded-lg">
+            <div className="team-image w-[400px] h-[400px] relative overflow-hidden rounded-lg img-box">
               <Image
                 src={member.image}
                 alt={member.name}
@@ -69,36 +68,46 @@ function OurTeam() {
         className={`team-modal ${selectedMember ? "open" : ""}`}
       >
         {selectedMember && (
-          <>
-            <div className="team-modal-content">
-              <button
-                className="close-modal"
-                onClick={() => {
-                  setSelectedMember(null);
-                }}
-              >
-                <RxCrossCircled size={40} />
-              </button>
+          <div className="team-modal-content">
+            <button
+              className="close-modal"
+              onClick={() => {
+                setSelectedMember(null);
+              }}
+            >
+              <RxCrossCircled size={40} />
+            </button>
 
-              <img
-                src={selectedMember.image}
-                alt={selectedMember.name}
-                width={100}
-                height={100}
-              />
+            <img
+              src={selectedMember.image}
+              alt={selectedMember.name}
+              width={100}
+              height={100}
+            />
 
-              <div className="team-info">
-                <h3>{selectedMember.name}</h3>
-                <h4>{selectedMember.role}</h4>
-              </div>
-
-              <div className="bio-information">
-                {selectedMember.paras.map((para, index) => (
-                  <p key={index}>{para}</p>
-                ))}
-              </div>
+            <div className="team-info">
+              <h3>{selectedMember.name}</h3>
+              <h4>{selectedMember.role}</h4>
             </div>
-          </>
+
+            <div className="bio-information">
+              {selectedMember.paras.map((para, index) => (
+                <p key={index}>{para}</p>
+              ))}
+            </div>
+            <div className="social-links">
+              {selectedMember.socials.map((social, index) => (
+                <Link
+                  key={index}
+                  href={social.url}
+                  target="__blank"
+                  className="social-link"
+                >
+                  {social.icon}
+                </Link>
+              ))}
+            </div>
+          </div>
         )}
       </div>
     </div>

@@ -1001,22 +1001,24 @@ img {
 }
 
 .team-modal {
-  position: absolute;
+  position: fixed;
   right: -100%;
   top: 0;
   width: 55%;
-  height: 200%;
+  height: 100vh;
   background-color: var(--clr-green);
-  padding: 5rem 4rem;
+  padding: 6rem 4rem;
   border-radius: 1rem;
   z-index: 100;
   transition: all 0.3s;
-  scrollbar-width: none; /* Firefox: Hides scrollbar */
   overflow-y: auto;
 }
 
-.team-moda::-webkit-scrollbar {
-  display: none; /* Chrome, Safari: Hides scrollbar */
+/* Ensure scrollbar is invisible but scrolling still works */
+.team-modal::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 .team-modal.open {
   right: 0;
@@ -1026,18 +1028,26 @@ img {
   flex-direction: column;
   gap: 2rem;
   align-items: center;
-  height: 100%;
+  min-height: 100%; /* Ensures content fills modal */
   color: #000;
 }
+
 .team-modal-content img {
   border: 1px solid black;
   border-radius: 1.5rem;
   width: 250px;
   height: 250px;
 }
+.team-modal-content .social-links a {
+  color: black;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: white;
+}
+
 .team-modal-content .team-info {
   text-align: center;
 }
+
 .team-modal-content .team-info h3 {
   font-size: 2.5rem;
   font-weight: 500;
@@ -1075,6 +1085,20 @@ img {
     line-height: 1.7;
   }
 }
+
+@media screen and (max-width: 425px) {
+  .team-card .img-box {
+    width: 350px;
+    height: 350px;
+  }
+}
+@media screen and (max-width: 321px) {
+  .team-card .img-box {
+    width: 300px;
+    height: 300px;
+  }
+}
+
 .team-modal-overlay {
   position: fixed;
   background-color: rgba(255, 255, 255, 0.086);
