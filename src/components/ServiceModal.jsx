@@ -7,7 +7,7 @@ const ServiceModal = ({ isOpen, onClose, children }) => {
   const modalRef = useClickOutside(onClose); // Hook to detect outside clicks
 
   return createPortal(
-    <div className="absolute w-3/4  top-[52%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+    <div className="service-modal absolute w-3/4  top-[52%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
       <div
         className="bg-white p-6 rounded-2xl shadow-lg relative min-h-[50rem] overflow-hidden "
         ref={modalRef}

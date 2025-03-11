@@ -41,12 +41,12 @@ export default function About() {
         </motion.p>
 
         <motion.p variants={paragraphVariants}>
-          Our expertise advising in capital raising, regulatory compliance,
-          documentation, business structuring, and strategic liaison with BSE
-          and NSE exchanges. Through close collaboration with investment
-          bankers, auditors, and legal advisors, we provide tailored solutions
-          that support each client’s long-term vision and ensure a smooth,
-          efficient, and successful transition to public markets.
+          Our expertise spans advising in capital raising , regulatory
+          compliance, documentation, business structuring, and strategic liaison
+          with BSE and NSE exchanges. Through close collaboration with
+          investment bankers, auditors, and legal advisors, we provide tailored
+          solutions that support each client’s long-term vision and ensure a
+          smooth, efficient, and successful transition to public markets.
         </motion.p>
       </motion.div>
 
@@ -80,8 +80,8 @@ export default function About() {
           <motion.p variants={paragraphVariants}>
             We identify businesses with strong growth potential and help them
             unlock their next phase of expansion. Engaging in thoughtful Capital
-            Structuring through adviosry on and private placements, we align
-            capital needs with long-term objectives.
+            Structuring by advising on pre-IPO funding and private placements,
+            we align capital needs with long-term objectives.
           </motion.p>
           <motion.p variants={paragraphVariants}>
             We support companies at every stage, from early preparation to a
@@ -89,9 +89,8 @@ export default function About() {
             exits that create value for all stakeholders.
           </motion.p>
           <motion.p variants={paragraphVariants}>
-            We support companies at every stage, from early preparation to a
-            smooth and successful listing. Our approach ensures well-planned
-            exits that create value for all stakeholders.
+            We work hand-in-hand with company promoters, ensuring clarity,
+            confidence, and momentum throughout the process.
           </motion.p>
         </motion.div>
       </div>

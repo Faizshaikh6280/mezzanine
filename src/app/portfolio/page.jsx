@@ -3,7 +3,6 @@ import { portfolioLinkks } from "@/data";
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 function Portfolio() {
   return (

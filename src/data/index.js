@@ -33,7 +33,7 @@ export const serviceslinks = [
       {
         title: "Precise Business Valuation",
         description:
-          "Assigning an appropriate valuation to a privately held is pivotal. We collaborate with promoters to derive a well-calibrated valuation, factoring in financial performance, competitive landscape, and industry outlook to establish a strategic pricing structure.",
+          "Assigning an appropriate valuation to a privately held company is pivotal. We collaborate with promoters to derive a well-calibrated valuation, factoring in financial performance, competitive landscape, and industry outlook to establish a strategic pricing structure.",
       },
       {
         title: "Comprehensive IPO Roadmap Development",
@@ -58,7 +58,7 @@ export const serviceslinks = [
       {
         title: "Anchor Investments for Public Offerings",
         description:
-          "By identifying and securing reputable anchor investors , we help stabilize demand, boost market confidence, and ensure a strong foundation for IPO success.",
+          "By identifying and assisting in securing reputable anchor investors ,  we help stabilize demand, boost market confidence, and ensure a strong foundation for IPO success.",
       },
       {
         title: "Debt Financing",
@@ -205,7 +205,7 @@ export const portfolioLinkks = [
       "Founded in 1994 in Surat, SRG Narrow Fab Ltd is one of India’s largest manufacturers of elastic products. With a legacy spanning over 30 years, the company offers a diverse product portfolio, including woven, undergarment, knitted, furniture, shoe, luggage, and surgical elastic.",
       "To support SRG Narrow Fab’s sustainable growth, Mezzanine facilitated pre-IPO funding of over ₹3.5 crore, providing the necessary capital for expansion. Leveraging proactive advisory and close collaboration, Mezzanine is guiding the company in efficiently filing its DRHP on a fast-track basis. By working closely with the promoter, Mezzanine has positioned SRG Narrow Fab as a high-growth business ready for its next phase of expansion.",
     ],
-    website: "",
+    website: "https://srgelastics.com/",
     sector: "Elastic manufacturing",
     logo: "/images/srg-logo-white.png",
     logoblack: "/images/srg-logo-black.png",

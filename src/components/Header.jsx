@@ -28,6 +28,17 @@ export default function Header() {
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [menuOpen]);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -73,12 +84,19 @@ export default function Header() {
           <div className="menu ">
             <div
               className="hamburger__icon cursor-pointer"
-              onClick={() => setMenuOpen(true)}
+              onClick={() => {
+                setMenuOpen(true);
+              }}
             >
               <RiMenu3Line size={30} />
             </div>
             <div className={`mobile__menu ${menuOpen ? "active" : ""}`}>
-              <span className="icon" onClick={() => setMenuOpen(false)}>
+              <span
+                className="icon"
+                onClick={() => {
+                  setMenuOpen(false);
+                }}
+              >
                 <RxCrossCircled size={40} />
               </span>
               <motion.ul
@@ -114,7 +132,7 @@ export default function Header() {
         onClose={() => setSelectedPage("")}
       >
         <div className="flex  gap-10 modal justify-between">
-          <div className="left h-full rounded-2xl basis-full lg:basis-1/3">
+          <div className="left h-full rounded-2xl  lg:basis-1/3">
             <div className="flex gap-4">
               <h2 className="font-bold text-4xl">What We Do</h2>
               <GoArrowRight size={30} />
