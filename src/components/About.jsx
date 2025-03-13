@@ -37,7 +37,7 @@ export default function About() {
         <motion.p variants={paragraphVariants}>
           Headquartered in Ahmedabad, we are a boutique IPO advisory firm that
           guides company promoters through every stage of the process, from
-          pre-IPO preparation/stage to a successful listing and beyond
+          pre-IPO stage to a successful listing and beyond.
         </motion.p>
 
         <motion.p variants={paragraphVariants}>
