@@ -59,7 +59,7 @@ function ContactUs() {
         <h2>Send us a Message</h2>
 
         <form
-          action={"https://formsubmit.co/mezzaninequity@gmail.com"}
+          action={"https://formsubmit.co/info@mezzanineequity.co.in"}
           method="POST"
         >
           <input

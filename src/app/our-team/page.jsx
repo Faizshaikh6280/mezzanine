@@ -3,7 +3,7 @@
 import { teamMembers } from "@/data";
 import useClickOutside from "@/hooks/useClickOutside";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 import { RxCrossCircled } from "react-icons/rx";
@@ -12,6 +12,18 @@ import Image from "next/image";
 function OurTeam() {
   const [selectedMember, setSelectedMember] = React.useState(null);
   const modalRef = useClickOutside(() => setSelectedMember(null));
+
+  useEffect(() => {
+    if (selectedMember) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [selectedMember]);
+
   return (
     <div className="our-team">
       <motion.h1
