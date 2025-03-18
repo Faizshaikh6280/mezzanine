@@ -51,7 +51,7 @@ function ContactUs() {
           </div>
 
           <p>+91-886-687-3523</p>
-          <p>mezzanineequity@gmail.com</p>
+          <p>info@mezzanineequity.co.in</p>
         </div>
       </div>
 

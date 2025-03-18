@@ -55,7 +55,7 @@ export default function Footer() {
             <span className="shrink-0">
               <GoMail size={20} />
             </span>
-            <p>mezzanineequity@gmail.com</p>
+            <p>info@mezzanineequity.co.in</p>
           </div>
         </div>
       </footer>

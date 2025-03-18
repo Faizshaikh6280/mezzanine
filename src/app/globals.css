@@ -1076,7 +1076,6 @@ img {
   align-items: center;
   min-height: 100vh; /* Ensures content fills modal */
   color: #000;
-  overflow-y: auto;
 }
 
 .team-modal-content img {
@@ -1348,4 +1347,17 @@ input[type="number"]::-webkit-outer-spin-button {
 .credit a:hover {
   text-decoration: underline;
   color: var(--clr-main);
+}
+
+svg,
+img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  display: block;
 }
