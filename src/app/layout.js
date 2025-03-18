@@ -13,7 +13,7 @@ const montserrat = Montserrat({
 export const metadata = {
   title: "Mezzanine Equity",
   description:
-    " Helping Businesses Raise Capital & Navigate t he IPO Journey, with Confidence.",
+    "Helping Businesses Raise Capital & Navigate t he IPO Journey, with Confidence.",
 };
 
 export default function RootLayout({ children }) {

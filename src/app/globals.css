@@ -125,8 +125,17 @@ img {
   gap: 10rem;
   border-bottom: 1px solid rgb(52, 47, 47);
 }
-.nav img {
+
+.nav img.logo {
   width: 300px;
+  min-width: 300px;
+}
+
+@media screen and (max-width: 425px) {
+  .nav img.logo {
+    width: 200px;
+    min-width: 200px;
+  }
 }
 
 .nav__links {
@@ -1317,6 +1326,7 @@ input[type="number"]::-webkit-outer-spin-button {
     font-size: 2.5rem;
   }
 }
+
 .copyright p {
   text-align: center;
   padding: 1.5rem;

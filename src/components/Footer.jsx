@@ -10,7 +10,7 @@ export default function Footer() {
     <>
       <footer className="footer  left-0">
         <div className="col-1">
-          <img alt="icon" src="/images/logo-white.svg" className="logo" />
+          <img alt="icon" src="/images/logo-white.png" className="logo" />
           <div className="social-links">
             {socialIcons.map((social, indxl) => (
               <a

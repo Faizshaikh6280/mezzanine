@@ -64,7 +64,11 @@ export default function Header() {
         </div>
 
         <Link href={"/"} onClick={() => setSelectedPage("")}>
-          <img src="/images/logo-white.svg" alt="Mezzanine logo" />
+          <img
+            src="/images/logo-white.png"
+            alt="Mezzanine logo"
+            className="logo"
+          />
         </Link>
 
         <ul className="flex nav__links">
@@ -88,7 +92,7 @@ export default function Header() {
                 setMenuOpen(true);
               }}
             >
-              <RiMenu3Line size={30} />
+              <RiMenu3Line size={30} className="min-w-10" />
             </div>
             <div className={`mobile__menu ${menuOpen ? "active" : ""}`}>
               <span
