@@ -904,6 +904,7 @@ img {
   height: 150px;
   margin-bottom: 1rem;
 }
+
 .portfolio-page .company-name {
   font-size: 3rem;
   font-weight: 600;
@@ -976,8 +977,8 @@ img {
 
 @media screen and (max-width: 425px) {
   .portfolio-page .logo {
-    max-width: 80px;
-    height: 80px;
+    max-width: 70px;
+    height: 70px;
   }
 }
 
@@ -1093,6 +1094,7 @@ img {
   width: 250px;
   height: 250px;
 }
+
 .team-modal-content .social-links a {
   color: black;
   border: 2px solid rgb(0, 0, 0);
