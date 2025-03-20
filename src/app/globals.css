@@ -1089,7 +1089,7 @@ img {
 }
 
 .team-modal-content img {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 1.5rem;
   width: 250px;
   height: 250px;
