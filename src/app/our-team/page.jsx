@@ -46,12 +46,13 @@ function OurTeam() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            <div className="team-image w-[400px] h-[400px] relative overflow-hidden rounded-lg img-box">
+            <div className="team-image grayscale w-[400px] h-[400px] relative overflow-hidden rounded-lg img-box">
               <Image
                 src={member.image}
                 alt={member.name}
                 layout="fill"
                 objectFit="cover"
+                className=""
               ></Image>
             </div>
             <div className="social-links">
@@ -95,6 +96,7 @@ function OurTeam() {
               alt={selectedMember.name}
               width={100}
               height={100}
+              className="grayscale"
             />
 
             <div className="team-info">

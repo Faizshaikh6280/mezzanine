@@ -248,32 +248,29 @@ export const teamMembers = [
       "He holds a Bachelor's degree in Mechanical Engineering from LD College of Engineering and has further strengthened his financial expertise by completing CFA Level 1. With a background in engineering, Kenil brings a unique perspective to investing, allowing him to better understand complex business models and systems.",
     ],
   },
-  // {
-  //   name: "Parakh Shah",
-  //   role: "Senior Analyst",
-  //   image: "/images/men-2.png",
-  //   socials: [
-  //     {
-  //       url: "https://www.linkedin.com/in/arun-kumar-5b9b5b1b/",
-  //       icon: <FaLinkedinIn size={20} />,
-  //     },
-  //     {
-  //       url: "https://www.linkedin.com/in/arun-kumar-5b9b5b1b/",
-  //       icon: <FaInstagram size={20} />,
-  //     },
-  //     {
-  //       url: "https://www.linkedin.com/in/arun-kumar-5b9b5b1b/",
-  //       icon: <BsTwitterX size={20} />,
-  //     },
-  //   ],
-  //   paras: [
-  //     "Parakh Shah is a Senior Analyst at Mezzanine Equity Private Limited, specializing in business analysis, financial modeling, and advisory. A Chartered Accountant, he has a strong foundation in finance, business strategy, and valuations, further strengthening his expertise by completing CFA Level 1.",
+  {
+    name: "Parakh Shah",
+    role: "Senior Analyst",
+    image: "/images/parakh.jpg",
+    socials: [
+      {
+        url: "https://www.linkedin.com/in/parakhshah?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+        icon: <FaLinkedinIn size={20} />,
+      },
 
-  //     "With over six years of experience, Parakh has worked extensively in finance, business analysis, and taxation, including a tenure at ICICI AMC, where he gained valuable insights into the financial sector.",
+      {
+        url: "https://x.com/parakhshah07?s=21",
+        icon: <BsTwitterX size={20} />,
+      },
+    ],
+    paras: [
+      "Parakh Shah is a Senior Analyst at Mezzanine Equity Private Limited, specializing in business analysis, financial modeling, and advisory. A Chartered Accountant, he has a strong foundation in finance, business strategy, and valuations, further strengthening his expertise by completing CFA Level 1.",
 
-  //     "At Mezzanine, he plays a key role in analyzing business models, assessing valuations, and providing strategic advisory to businesses to drive long term value creation.",
-  //   ],
-  // },
+      "With over six years of experience, Parakh has worked extensively in finance, business analysis, and taxation, including a tenure at ICICI AMC, where he gained valuable insights into the financial sector.",
+
+      "At Mezzanine, he plays a key role in analyzing business models, assessing valuations, and providing strategic advisory to businesses to drive long term value creation.",
+    ],
+  },
   {
     name: "Dasharath Bosamiya ",
     role: "Associate",
