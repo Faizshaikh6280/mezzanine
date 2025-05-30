@@ -197,19 +197,19 @@ export const portfolioLinkks = [
     sector: "City gas distribution infra/Power transmission",
     logo: "/images/desco-logo1.png",
   },
-  {
-    title: "SRG Narrow Fab Ltd",
-    link: "/portfolio/srg",
-    slug: "srg",
-    paras: [
-      "Founded in 1994 in Surat, SRG Narrow Fab Ltd is one of India’s largest manufacturers of elastic products. With a legacy spanning over 30 years, the company offers a diverse product portfolio, including woven, undergarment, knitted, furniture, shoe, luggage, and surgical elastic.",
-      "To support SRG Narrow Fab’s sustainable growth, Mezzanine facilitated pre-IPO funding of over ₹3.5 crore, providing the necessary capital for expansion. Leveraging proactive advisory and close collaboration, Mezzanine is guiding the company in efficiently filing its DRHP on a fast-track basis. By working closely with the promoter, Mezzanine has positioned SRG Narrow Fab as a high-growth business ready for its next phase of expansion.",
-    ],
-    website: "https://srgelastics.com/",
-    sector: "Elastic manufacturing",
-    logo: "/images/srg-logo-white.png",
-    logoblack: "/images/srg-logo-black.png",
-  },
+  // {
+  //   title: "SRG Narrow Fab Ltd",
+  //   link: "/portfolio/srg",
+  //   slug: "srg",
+  //   paras: [
+  //     "Founded in 1994 in Surat, SRG Narrow Fab Ltd is one of India’s largest manufacturers of elastic products. With a legacy spanning over 30 years, the company offers a diverse product portfolio, including woven, undergarment, knitted, furniture, shoe, luggage, and surgical elastic.",
+  //     "To support SRG Narrow Fab’s sustainable growth, Mezzanine facilitated pre-IPO funding of over ₹3.5 crore, providing the necessary capital for expansion. Leveraging proactive advisory and close collaboration, Mezzanine is guiding the company in efficiently filing its DRHP on a fast-track basis. By working closely with the promoter, Mezzanine has positioned SRG Narrow Fab as a high-growth business ready for its next phase of expansion.",
+  //   ],
+  //   website: "https://srgelastics.com/",
+  //   sector: "Elastic manufacturing",
+  //   logo: "/images/srg-logo-white.png",
+  //   logoblack: "/images/srg-logo-black.png",
+  // },
   {
     title: "Coming Soon",
     link: "/portfolio/not-disclosed",
@@ -243,7 +243,8 @@ export const teamMembers = [
     paras: [
       "Kenil Thathagar is the Founder of Mezzanine Equity Private Limited and an investor with a strong track record in equity markets and private investments. He plays an active role in identifying high-growth opportunities and driving value creation across sectors.",
 
-      "Before establishing Mezzanine Equity, Kenil spent over eight years in stock market investments, with a specialized focus on the unlisted segment for the past three years. His investment acumen has contributed to the success of companies such as Desco Infratech Ltd and SRG Narrow Fab Ltd.",
+      "Before establishing Mezzanine Equity, Kenil spent over eight years in stock market investments, with a specialized focus on the unlisted segment for the past three years. His investment acumen has contributed to the success of companies such as Desco Infratech Ltd.",
+      //  and SRG Narrow Fab Ltd.
 
       "He holds a Bachelor's degree in Mechanical Engineering from LD College of Engineering and has further strengthened his financial expertise by completing CFA Level 1. With a background in engineering, Kenil brings a unique perspective to investing, allowing him to better understand complex business models and systems.",
     ],
