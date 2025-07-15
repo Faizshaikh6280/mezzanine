@@ -22,11 +22,11 @@ export default function Stats() {
           </div>
 
           <div>
-            <h2>₹50 Cr+</h2>
+            <h2>₹500 Cr+</h2>
             <p>Investment Raised</p>
           </div>
           <div>
-            <h2>03</h2>
+            <h2>07</h2>
             <p>Companies Advised</p>
           </div>
         </div>
