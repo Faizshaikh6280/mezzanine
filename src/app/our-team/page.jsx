@@ -46,15 +46,15 @@ function OurTeam() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            <div className="team-image grayscale w-[400px] h-[400px] relative overflow-hidden rounded-lg img-box">
+            <div className="relative w-[400px] h-[400px] overflow-hidden rounded-lg  bg-black">
               <Image
                 src={member.image}
                 alt={member.name}
-                layout="fill"
-                objectFit="cover"
-                className=""
-              ></Image>
+                fill
+                className="object-cover object-center"
+              />
             </div>
+
             <div className="social-links">
               {member.socials.map((social, index) => (
                 <Link
